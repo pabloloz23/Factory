@@ -1,5 +1,6 @@
 package aplication.factory;
 import aplication.buttons.Button;
+import aplication.checkboxes.Checkbox;
 
 /**
  * Base factory class. Note that "factory" is merely a role for the class. It
@@ -13,7 +14,12 @@ public abstract class Dialog {
 
         Button okButton = createButton();
         okButton.render();
+        Checkbox okCheckbox = createCheckbox();
+        okCheckbox.paint();
+
     }
+
+    public abstract Checkbox createCheckbox();
 
     /**
      * Subclasses will override this method in order to create specific button
